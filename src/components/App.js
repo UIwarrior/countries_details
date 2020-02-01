@@ -2,16 +2,17 @@
 import React from 'react';
 import Header from './Header';
 import Routes from '../Routes';
+import { Container } from 'react-bootstrap';
 
 class App extends React.Component {
-
-    render() {
+    render(){
         return (
-            <div>
+            <Container>
                 <Header />
                 <Routes />
-            </div>
+            </Container>
         )
+        }
+    
     }
-}
 export default App;
