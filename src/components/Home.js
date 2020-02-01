@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Countries from './Countries';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import '../stylesheets/App.css';
 import Axios from 'axios';
 import SearchBar from './Search';
@@ -45,6 +45,29 @@ const Home = () => {
         }
       
     }
+
+    return (
+        <Container>
+            <SearchBar onSearchValue = {onSearchFunc}/>
+            <Row>
+            {countries.map( val => (
+                <Col sm ={4}>
+                 <Card>
+                 <Card.Img variant="top" style={{maxHeight:'140px'}} />
+                 <Card.Body>
+                     <Card.Title>{val.name}</Card.Title>
+                     <Card.Text>
+                      <p><strong>Population: </strong>{val.population} </p>    
+                      <p><strong>Region: </strong>{val.region} </p>  
+                      <p><strong>Capital: </strong>{val.capital} </p>  
+                     </Card.Text>
+                 </Card.Body>
+             </Card>
+             </Col>
+            ))}
+           </Row>
+        </Container>
+    )
 }
 
 export default Home;

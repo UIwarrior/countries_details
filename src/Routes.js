@@ -1,8 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
-import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
-import App from './components/App'
-import Home from './components/Home'
+import { Route, Link, BrowserRouter, Switch } from 'react-router-dom';
+import App from './components/App';
+import Home from './components/Home';
 import CountryDetail from './components/CountryDetail'
 
 const Routes = ()  => (
@@ -10,7 +10,7 @@ const Routes = ()  => (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/countries/:id" component={CountryDetail} />
-          <Route path="/home" component={App} />
+          <Route path="/home" component={Home} />
         </Switch>
     </BrowserRouter>
   )
